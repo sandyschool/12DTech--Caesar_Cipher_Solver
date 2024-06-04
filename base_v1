@@ -1,0 +1,18 @@
+#imports go here
+import string
+
+
+#functions go here
+
+alphabet = string.ascii_lowercase # "abcdefghijklmnopqrstuvwxyz"
+alphabet = string.ascii_uppercase #"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+def decrypt():
+    
+    print("Welcome to Caesar Cipher Decryption.\n")
+    encrypted_message = input("Enter the message you would like to decrypt: ").strip()
+    print()
+    key = int(input("Enter key to decrypt: "))
+
+
