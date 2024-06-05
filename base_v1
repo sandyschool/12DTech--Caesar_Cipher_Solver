@@ -7,12 +7,16 @@ import string
 alphabet = string.ascii_lowercase # "abcdefghijklmnopqrstuvwxyz"
 alphabet = string.ascii_uppercase #"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+#display instructions
 
-def decrypt():
-    
-    print("Welcome to Caesar Cipher Decryption.\n")
-    encrypted_message = input("Enter the message you would like to decrypt: ").strip()
-    print()
-    key = int(input("Enter key to decrypt: "))
+
+#encryption function
+FIRST_CHAR=ord ("A")
+LAST_CHAR = ord ("Z")
+CHAR_RANGE = LAST_CHAR - FIRST_CHAR + 1
+#make sure its for both lowercase and uppercase alphabets unlike here
+
+#decryption function
+
 
 
