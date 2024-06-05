@@ -1,11 +1,18 @@
 #imports go here
 import string
 
-
-#functions go here
-
 alphabet = string.ascii_lowercase # "abcdefghijklmnopqrstuvwxyz"
 alphabet = string.ascii_uppercase #"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+#functions go here
+def caesar_shift(message, shift):
+      #result placeholder
+ result= ""
+
+  #go through each of the letters in the message
+ for char in message. upper(): 
+    if char.isalpha ():
 
 #display instructions
 
