@@ -13,6 +13,21 @@ def caesar_shift(message, shift):
   #go through each of the letters in the message
  for char in message. upper(): 
     if char.isalpha ():
+ #convert the characters to the ASCII code
+     char_code= ord(char)
+     new_message= char_code + shift 
+
+     if new_message> LAST_CHAR:
+        new_message -= CHAR_RANGE
+
+     if new_message < FIRST_CHAR:
+          new_message  += CHAR_RANGE
+     
+     new_char= chr(new_message)
+     result += new_char
+    else: 
+     result += char  
+print (result)
 
 #display instructions
 
