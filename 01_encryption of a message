@@ -1,0 +1,37 @@
+#constants
+FIRST_CHAR =ord("A")
+LAST_CHAR = ord ("Z")
+CHAR_RANGE = LAST_CHAR - FIRST_CHAR +1
+
+#functions go here
+def caesar_message(message, shift):
+ result= ""
+
+#The code should go through each of the letters
+ for char in message. upper(): 
+    if char.isalpha ():
+    
+     #convert the characters to the ASCII code
+     char_code= ord(char)
+     new_message= char_code + shift 
+
+     if new_message> LAST_CHAR:
+        new_message -= CHAR_RANGE
+
+     if new_message < FIRST_CHAR:
+          new_message  += CHAR_RANGE
+     
+     new_char= chr(new_message)
+     result += new_char
+    else: 
+     result += char  
+    
+ print (result)
+#asking the user to input an integer
+user_input= input("Please enter your meessage to encrypt: ")
+user_shift_key = int(input("Shift key (Please enter a number): "))
+
+#user shift key must be between 1 and 26
+#ValueError if user mistakenly inputs a number
+
+caesar_message(user_input, user_shift_key)
