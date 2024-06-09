@@ -1,3 +1,13 @@
+#function for asking the user for input and making sure entered input is correct
+def user_interface():
+ while True: 
+   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   if user_input in ["encrypt", "decrypt", "e", "d"]:
+      return user_interface
+   else:
+    print("Sorry! Please enter a valid answer. ")
+
+#function for confirming user's choices + letting them exit the code
 def confirm_user_choice():
    if user_interface in ["encrypt", "e"]:
       print ("You have chosen, ***Encryption*** !")
