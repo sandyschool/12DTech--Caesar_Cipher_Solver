@@ -17,7 +17,7 @@ def banner ():
 def decrypt_text ():
     user_encrypted_text = input ("Enter the text you would like to decrypt: ").strip()
     print()
-    shift=  cipher_shift ()
+    
 
 
     plain_text = ""
