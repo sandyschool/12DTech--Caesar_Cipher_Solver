@@ -2,7 +2,7 @@
 def user_interface():
  while True: 
    user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
-   if user_input in ['encrypt', 'decrypt', 'e', 'd']:
+   if user_input in ["encrypt", "decrypt", "e", "d"]:
       return user_interface
    else:
     print("Sorry! Please enter a valid answer. ")
