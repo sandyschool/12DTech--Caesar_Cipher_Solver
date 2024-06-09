@@ -1,0 +1,12 @@
+def confirm_user_choice():
+   if user_interface in ["encrypt", "e"]:
+      print ("You have chosen, ***Encryption*** !")
+   elif user_interface in ["decrypt", "d"] :
+      print("You have chosen,\n ***Decryption*** !")
+
+      confirm= input ("Do you agree with choice? (yes/no): ")
+      if confirm in ["yes", "y", "Y", "Yes"]:
+        if user_interface in ["encrypt", "e"]:
+         print ()
+        elif user_interface in ["decrypt", "d"]:
+         decrypt_text()
