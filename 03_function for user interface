@@ -1,0 +1,23 @@
+#function for asking the user for input and making sure entered input is correct
+def user_interface():
+ while True: 
+   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   if user_input in ['encrypt', 'decrypt', 'e', 'd']:
+      return user_interface
+   else:
+    print("Sorry! Please enter a valid answer. ")
+
+#redo this with maybe another function, confirm the user's choices
+if user_input == "decrypt" or "d":
+    print ("You have chosen ***Decryption***")
+    print()
+    confirm= input ("yes/ no: ").lower()
+    if confirm== "yes":
+        print ("***Decryption***")
+        print ()
+    elif confirm == "no":
+      input=  print("Would you like to exit code?")
+      if input == "yes" or "y" or "Y":
+       SystemExit
+print ()
+decrypt_text()
