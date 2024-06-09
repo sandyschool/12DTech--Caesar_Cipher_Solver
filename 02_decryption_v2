@@ -1,0 +1,58 @@
+#imports go here
+#importing alphabet
+import string
+
+alphabet_lower = string.ascii_lowercase #abcdefghijklmnsopqrstuvwxyz
+alphabet_upper = string.ascii_uppercase #ABCDEFGHIJKLMNSOPQESTUVWXYZ
+
+
+
+#functions go here
+def banner (): 
+    print ("**************************************************")
+    print ("Welcome to Sandy's Caesar Cipher Solver!")
+    print ("**************************************************")  
+
+#decrypt text- transform encrypted text to plain text
+def decrypt_text ():
+    user_encrypted_text = input ("Enter the text you would like to decrypt: ").strip()
+    print()
+    shift=  cipher_shift ()
+
+
+    plain_text = ""
+
+    for char in user_encrypted_text:
+     
+        if char in alphabet_lower:
+           
+           position = alphabet_lower.find(char) 
+           new_position = (position - shift) % 26
+           new_letter = alphabet_lower[new_position] 
+           plain_text += new_letter
+
+        elif char in alphabet_upper:
+           
+            position = alphabet_upper.find(char) 
+            new_position = (position - shift) % 26
+            new_letter = alphabet_upper[new_position] 
+            plain_text += new_letter
+        else:
+            plain_text += char
+            new_letter = char
+    
+
+        print (plain_text)
+
+#function for making sure the user enters a number between 1 to 26
+def cipher_shift ():
+   while True:
+    try:
+        shift= int(input("Enter the shift between 1 and 26: "))
+        if shift >=1 or shift <= 26:
+           return shift
+        else:
+           shift = int(input("Enter the shift between 1 and 26: "))
+
+    except ValueError:
+         print ("Sorry, you must enter a number between 1 and 26")
