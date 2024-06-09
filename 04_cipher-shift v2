@@ -1,5 +1,6 @@
 #function for making sure the user enters a number between 1 to 26
 def cipher_shift ():
+#creating an error message
    error = "Sorry, you must enter a number between 1 and 26"
    
    while True:
@@ -14,4 +15,6 @@ def cipher_shift ():
            print()
     except ValueError:
          print ("Sorry, you must enter a number between 1 and 26")
+#debugging- but it is only repeating everythign
+#change try loop to something else
      
