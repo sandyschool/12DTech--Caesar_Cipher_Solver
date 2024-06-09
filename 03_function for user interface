@@ -8,6 +8,7 @@ def user_interface():
     print("Sorry! Please enter a valid answer. ")
 
 #redo this with maybe another function, confirm the user's choices
+#too simple, plus it mucks up the input by user!!!!
 if user_input == "decrypt" or "d":
     print ("You have chosen ***Decryption***")
     print()
