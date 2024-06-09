@@ -1,0 +1,39 @@
+#function for asking the user for input and making sure entered input is correct
+def user_interface():
+ while True: 
+   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   if user_input in ["encrypt", "decrypt", "e", "d"]:
+      return user_interface
+   else:
+    print("Sorry! Please enter a valid answer. ")
+
+#function for confirming user's choices + letting them exit the code
+def confirm_user_choice():
+   if user_interface in ["encrypt", "e"]:
+      print ("You have chosen, ***Encryption*** !")
+   elif user_interface in ["decrypt", "d"] :
+      print("You have chosen,\n ***Decryption*** !")
+
+      confirm= input ("Do you agree with choice? (yes/no): ")
+      if confirm in ["yes", "y", "Y", "Yes"]:
+        if user_interface in ["encrypt", "e"]:
+         print ()
+        elif user_interface in ["decrypt", "d"]:
+         decrypt_text()
+
+elif confirm in ["no","n","N","No"]:
+        print ("Would you like to: \n "
+              "01. Return to Main Menu \n"
+              "02. Exit Caesar Cipher solver")
+        choose = int(input("Enter either 01 or 02: "))
+        if choose ==1 :
+           print("Returning to Main Menu!...")
+        if choose == 2:
+           print ("Goodbye! Exiting Caesar Cipher Solver now...")
+           sleep (2) 
+           SystemExit
+
+      else:
+          print ("Sorry! Please enter a valid input.")
+          sleep
+          print("Returning to Main Menu now...")
