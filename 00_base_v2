@@ -1,0 +1,74 @@
+#imports go here
+#importing alphabet
+import string
+
+alphabet_lower = string.ascii_lowercase #abcdefghijklmnsopqrstuvwxyz
+alphabet_upper = string.ascii_uppercase #ABCDEFGHIJKLMNSOPQESTUVWXYZ
+
+
+
+#functions go here
+def banner (): 
+    print ("**************************************************")
+    print ("Welcome to Sandy's Caesar Cipher Solver!")
+    print ("**************************************************")  
+
+#decrypt text- transform encrypted text to plain text
+def decrypt_text ():
+    user_encrypted_text = input ("Enter the text you would like to decrypt: ").strip()
+    print()
+    shift=  cipher_shift ()
+
+
+    plain_text = ""
+
+    for char in user_encrypted_text:
+     
+        if char in alphabet_lower:
+           current_position = alphabet_lower.find(char) 
+           new_position = (current_position - shift) % 26
+           new_letter = alphabet_lower[new_position] 
+           plain_text += new_letter
+
+         
+        elif char in alphabet_upper:
+            current_position = alphabet_upper.find(char) 
+            new_position = (current_position - shift) % 26
+            new_letter = alphabet_upper[new_position] 
+            plain_text += new_letter
+
+        else:
+            plain_text += char
+            
+        print (plain_text)
+
+#asking user for input
+print ("Would you like to encrypt or decrypt text? \n")
+user_input = input("encrypt/ decrypt: ").lower()
+
+if user_input == "encrypt" or "e":
+    print ("You have chosen ENCRYPTION")
+    print()
+    confirm= input ("yes/ no: ").lower()
+    if confirm== "yes":
+        print()
+        print ("ENCRYPTION MODE ON!")
+    elif confirm == "no":
+     user_input=  print("Would you like to exit code?")
+     if input == "yes" or "y" or "Y":
+       SystemExit
+
+    
+if user_input == "decrypt" or "d":
+    print ("You have chosen DECRYPTION")
+    print()
+    confirm= input ("yes/ no: ").lower()
+    if confirm== "yes":
+        print ("DECRYPTION MODE ON!")
+        print ()
+    elif confirm == "no":
+     user_input=  print("Would you like to exit code?")
+     if input == "yes" or "y" or "Y":
+       SystemExit
+print ()
+decrypt_text()
