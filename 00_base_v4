@@ -1,0 +1,80 @@
+#imports go here
+#importing alphabet
+import string
+
+alphabet_lower = string.ascii_lowercase #abcdefghijklmnsopqrstuvwxyz
+alphabet_upper = string.ascii_uppercase #ABCDEFGHIJKLMNSOPQESTUVWXYZ
+
+
+#functions go here
+def banner (): 
+    print ("**************************************************")
+    print ("Welcome to Sandy's Caesar Cipher Solver!")
+    print ("**************************************************")  
+
+#decrypt text- transform encrypted text to plain text
+def decrypt_text ():
+    user_encrypted_text = input ("Enter the text you would like to decrypt: ").strip()
+    print()
+    shift=  cipher_shift ()
+
+
+    plain_text = ""
+
+    for char in user_encrypted_text:
+     
+        if char in alphabet_lower:
+           current_position = alphabet_lower.find(char) 
+           new_position = (current_position - shift) % 26
+           new_letter = alphabet_lower[new_position] 
+           plain_text += new_letter
+
+         
+        elif char in alphabet_upper:
+            current_position = alphabet_upper.find(char) 
+            new_position = (current_position - shift) % 26
+            new_letter = alphabet_upper[new_position] 
+            plain_text += new_letter
+
+        else:
+            plain_text += char
+            
+        print (plain_text)
+
+#function for making sure the user enters a number between 1 to 26
+def cipher_shift ():
+   while True:
+    try:
+        shift= int(input("Enter the shift between 1 and 26: "))
+        if shift >=1 or shift <= 26:
+           return shift
+        else:
+           shift = int(input("Enter the shift between 1 and 26: "))
+
+    except ValueError:
+         print ("Sorry, you must enter a number between 1 and 26")
+
+#function for asking the user for input and making sure entered input is correct
+def user_interface():
+ while True: 
+   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   if user_input in ["encrypt", "decrypt", "e", "d"]:
+      return user_interface
+   else:
+    print("Sorry! Please enter a valid answer. ")
+
+#redo this with maybe another function, confirm the user's choices
+#too simple, plus it mucks up the input by user!!!!
+if user_input == "decrypt" or "d":
+    print ("You have chosen ***Decryption***")
+    print()
+    confirm= input ("yes/ no: ").lower()
+    if confirm== "yes":
+        print ("***Decryption***")
+        print ()
+    elif confirm == "no":
+      input=  print("Would you like to exit code?")
+      if input == "yes" or "y" or "Y":
+       SystemExit
+print ()
+decrypt_text()
