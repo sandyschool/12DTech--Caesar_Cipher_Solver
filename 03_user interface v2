@@ -17,6 +17,6 @@ def confirm_user_choice():
       confirm= input ("Do you agree with choice? (yes/no): ")
       if confirm in ["yes", "y", "Y", "Yes"]:
         if user_interface in ["encrypt", "e"]:
-         print ()
+         print ()    #this where encryption function will go, still creating it
         elif user_interface in ["decrypt", "d"]:
          decrypt_text()
