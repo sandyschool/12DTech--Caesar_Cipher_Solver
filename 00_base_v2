@@ -47,12 +47,12 @@ print ("Would you like to encrypt or decrypt text? \n")
 user_input = input("encrypt/ decrypt: ").lower()
 
 if user_input == "encrypt" or "e":
-    print ("You have chosen ENCRYPTION")
+    print ("You have chosen ***Encryption***")
     print()
     confirm= input ("yes/ no: ").lower()
     if confirm== "yes":
         print()
-        print ("ENCRYPTION MODE ON!")
+        print ("***Encryption***")
     elif confirm == "no":
      user_input=  print("Would you like to exit code?")
      if input == "yes" or "y" or "Y":
@@ -60,11 +60,11 @@ if user_input == "encrypt" or "e":
 
     
 if user_input == "decrypt" or "d":
-    print ("You have chosen DECRYPTION")
+    print ("You have chosen ***Decryption***")
     print()
     confirm= input ("yes/ no: ").lower()
     if confirm== "yes":
-        print ("DECRYPTION MODE ON!")
+        print ("***Decryption***")
         print ()
     elif confirm == "no":
      user_input=  print("Would you like to exit code?")
