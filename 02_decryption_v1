@@ -41,32 +41,3 @@ def decrypt_text ():
 
 
 
-print ("Would you like to encrypt or decrypt text? \n")
-user_input = input("encrypt/ decrypt: ").lower()
-
-if user_input == "encrypt" or "e":
-    print ("You have chosen ENCRYPTION")
-    print()
-    confirm= input ("yes/ no: ").lower()
-    if confirm== "yes":
-        print()
-        print ("ENCRYPTION MODE ON!")
-    elif confirm == "no":
-     user_input=  print("Would you like to exit code?")
-     if input == "yes" or "y" or "Y":
-       SystemExit
-
-    
-if user_input == "decrypt" or "d":
-    print ("You have chosen DECRYPTION")
-    print()
-    confirm= input ("yes/ no: ").lower()
-    if confirm== "yes":
-        print ("DECRYPTION MODE ON!")
-        print ()
-    elif confirm == "no":
-     user_input=  print("Would you like to exit code?")
-     if input == "yes" or "y" or "Y":
-       SystemExit
-print ()
-decrypt_text()
