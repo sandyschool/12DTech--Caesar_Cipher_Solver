@@ -8,7 +8,7 @@ alphabet = string.ascii_uppercase #ABCDEFGHIJKLMNSOPQESTUVWXYZ
 
 
 #functions go here
-def banner (): 
+def banner ():
     print ("**************************************************")
     print ("Welcome to Sandy's Caesar Cipher Solver!")
     print ("**************************************************")  
