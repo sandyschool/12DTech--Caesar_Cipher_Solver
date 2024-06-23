@@ -5,7 +5,7 @@ def cipher_shift():
     while True:
         try:
             shift= int(input("Enter the shift between 1 and 26: "))
-            if 1 <=shift and shift <=26:
+            if shift>= 1 and shift <=26:
                 return shift
                 print ()
             else:
