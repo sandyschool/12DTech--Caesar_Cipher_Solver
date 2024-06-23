@@ -135,12 +135,13 @@ def confirm_user_choice():
         print()
         print("You have chosen, \n ***Decryption***! ")
         print()
+        sleep (1)
 
-    sleep (1)
-    confirm= input ("Do you agree with your choice? (enter yes/ no): ").lower()
-    print()
+    while True:
+     confirm= input ("Do you agree with your choice? (enter yes/ no): ").lower()
+     print()
 
-    if confirm in ["yes","y"]:
+     if confirm in ["yes","y"]:
         if user_choice in ["encrypt", "e"]:
             print () 
             encrypt_text()
@@ -148,24 +149,16 @@ def confirm_user_choice():
             print()
             decrypt_text ()
 
-    elif confirm in ["no", "n"]:
+     elif confirm in ["no", "n"]:
         print ("Would you like to: \n"
               "01. Return to Main menu \n"
               "02. Exit Sandy's Caesar Cipher Solver")
         print()
-    else:
-        print("Sorry, please enter a valid answer! ")
-        print()
-        print("Returning to Main menu... ")
-        sleep(1.5)
-        return True
-
-   #error here, redoing 
-    num_choice= int(input("Enter either 1 or 2: "))
-    input_error ="Invalid answer!! Enter either 1 or 2"
-    while num_choice != 1 or num_choice != 2:
-        print(input_error)
-        num_choice = int(input("Enter either 1 or 2:"))
+        num_choice= int(input("Enter either 1 or 2: "))
+        input_error ="Invalid answer!! Enter either 1 or 2"
+        while num_choice != 1 or num_choice != 2:
+          print(input_error)
+          num_choice = int(input("Enter either 1 or 2:"))
      
         if num_choice == 1:
             print()
@@ -176,14 +169,6 @@ def confirm_user_choice():
             print("Goodbye! Exiting Sandy's Caesar Cipher Solver now...")
             sleep (1)
             sys.exit()
-
-        
-
-#function to make sure the whole program runs smoothly- bringing all the components together
-def main():
-    banner()
-    while True:
-        if not confirm_user_choice():
-            break
-
-main ()
+     else:
+        print("Sorry, please enter a valid answer! ")
+        print()
