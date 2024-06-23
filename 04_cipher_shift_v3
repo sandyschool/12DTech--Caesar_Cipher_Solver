@@ -1,0 +1,15 @@
+#function for making sure the user enters a number between 1 to 26
+def cipher_shift():
+    #error message
+    error ="Sorry, you must enter a number between 1 and 26"
+    while True:
+        try:
+            shift= int(input("Enter the shift between 1 and 26: "))
+            if 1 <=shift and shift <=26:
+                return shift
+                print ()
+            else:
+                print(error)
+                print()
+        except ValueError:
+            print(error)
