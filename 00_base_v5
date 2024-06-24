@@ -39,9 +39,9 @@ def decrypt_text ():
             plain_text += new_letter
 
         elif char in alphabet_upper:
-            current_position = alphabet_lower.find(char)
+            current_position = alphabet_upper.find(char)
             new_position = (current_position + shift) % 26
-            new_letter = alphabet_lower[new_position]
+            new_letter = alphabet_upper[new_position]
             plain_text += new_letter
         
         else:
@@ -75,9 +75,9 @@ def encrypt_text ():
             cipher_text += new_letter
 
         elif char in alphabet_upper:
-            current_position = alphabet_lower.find(char)
+            current_position = alphabet_upper.find(char)
             new_position = (current_position + shift) % 26
-            new_letter = alphabet_lower[new_position]
+            new_letter = alphabet_upper[new_position]
             cipher_text += new_letter
         
         else:
