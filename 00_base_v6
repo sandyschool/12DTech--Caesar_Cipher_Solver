@@ -1,0 +1,189 @@
+#imports go here
+#importing alphabet
+import string
+#importing time-which gives the illusion of a delay in program
+from time import sleep
+
+#for system exit
+import sys
+
+#import alphabet- lowercase and uppercase
+alphabet_lower = string.ascii_lowercase #abcdefghijklmnopqrstuvwxyz
+alphabet_upper = string.ascii_uppercase #ABCEDFGHIJKLMNOPQRSTUVWXYZ
+
+alphabet_lower_list = list(alphabet_lower)  # ['a', 'b', 'c', 'd', ..., 'z']
+alphabet_upper_list = list(alphabet_upper)  # ['A', 'B', 'C', 'D', ..., 'Z']
+
+#functions go here
+
+#a banner displayed at the beginning of the program
+def banner ():
+    print()
+    print ("******************************************")
+    print("Welcome to Sandy's Caesar Cipher Solver! ")
+    print("*******************************************")
+
+
+#function for decrypting text- transform encrypted text to plain text
+def decrypt_text ():
+    user_encrypted_text = input("Enter the text you would like to decrypt: ").strip()
+    print ()
+    shift = cipher_shift ()
+
+    plain_text = ""
+    
+    for char in user_encrypted_text:
+        if char in alphabet_lower:
+            current_position = alphabet_lower.find(char)
+            new_position = (current_position - shift) % 26
+            new_letter = alphabet_lower[new_position]
+            plain_text += new_letter
+
+        elif char in alphabet_upper:
+            current_position = alphabet_upper.find(char)
+            new_position = (current_position - shift) % 26
+            new_letter = alphabet_upper[new_position]
+            plain_text += new_letter
+        
+        else:
+            plain_text += char
+
+    #decrypted text is shown  
+    print()      
+    sleep (2)
+    print ("Finalizing decryption....")
+    print ()
+    sleep(2)
+    print ("Your decrypted message is....")
+    sleep(2)
+    print ()
+    print(plain_text)
+    print()
+
+#function for encrpytion- plain text to caesar cipher text
+def encrypt_text ():
+    user_plain_text= input("Enter the text you would like to encrypt: ").strip()
+    print ()
+    shift = cipher_shift ()
+
+    cipher_text = ""
+    
+    for char in user_plain_text:
+        if char in alphabet_lower:
+            current_position = alphabet_lower.find(char)
+            new_position = (current_position + shift) % 26
+            new_letter = alphabet_lower[new_position]
+            cipher_text += new_letter
+
+        elif char in alphabet_upper:
+            current_position = alphabet_upper.find(char)
+            new_position = (current_position + shift) % 26
+            new_letter = alphabet_upper[new_position]
+            cipher_text += new_letter
+        
+        else:
+            cipher_text += char
+     #encrypted text output
+    print()
+    sleep (2)
+    print("Finalizing encryption....")
+    sleep(2)
+    print()
+    print("Your encrypted message is....")
+    sleep(2)
+    print()
+    print(cipher_text)
+    print()
+
+#function for making sure the user enters a number between 1 to 26
+def cipher_shift():
+    #error message
+    error ="Sorry, you must enter a number between 1 and 26"
+    while True:
+        try:
+            shift= int(input("Enter the shift between 1 and 26: "))
+            if 1 <=shift and shift <=26:
+                return shift
+                print ()
+            else:
+                print(error)
+                print()
+        except ValueError:
+            print(error)
+
+
+#function for asking the user for input and making sure entered input is correct
+def user_interface ():
+    #main menu
+    while True:
+        user_input = input("Would you like to encrypt or decrypt text? (enter e/ d): ").lower()
+        if user_input in ["e","d","encrypt","decrypt"]:
+            return user_input
+        else:
+            print()
+            print("Sorry! Please enter a valid answer. ")
+            print()
+
+
+#function for confirming user decisions + letting them exit the code
+def confirm_user_choice():
+   user_choice= user_interface ()
+   if user_choice in ["encrypt", "e"]:
+       print()
+       print("You have chosen, \n ***Encryption***!")
+       print()
+   elif user_choice in ["decrypt", "d"]:
+       print()
+       print("You have chosen, \n ***Decryption***!")
+       print()
+
+   while True:
+        confirm = input("Do you agree with your choice? (enter yes/ no): ").lower()
+        print()
+
+        if confirm in ["yes", "y"]:
+            if user_choice in ["encrypt", "e"]:
+                   print()
+                   encrypt_text()
+            elif user_choice in ["decrypt", "d"]:
+                print()
+                decrypt_text()
+            break
+
+        elif confirm in ["no", "n"]:
+            print ("Would you like to: \n"
+                    "01. Return to Main menu \n"
+                    "02. Exit Sandy's Caesar Cipher Solver")
+            print()
+
+            while True:
+                try:
+                    num_choice = int(input("Enter either 1 or 2: "))
+                    error_message= "Invalid answer! Enter either 1 or 2"
+
+                    if num_choice == 1:
+                        print ()
+                        print("Returning to Main menu!...")
+                        sleep(2)
+                        return True
+                    elif num_choice == 2:
+                        print("Goodbye! Exiting Sandy's Caesar Cipher Solver now...")
+                        sleep(2)
+                        sys.exit ()
+                    else:
+                        print(error_message)
+                except ValueError:
+                       print(error_message)
+
+        else:
+            print("Sorry, please enter a valid answer! ")
+            print()
+
+   
+#function- main
+def main():
+    banner ()
+    confirm_user_choice()
+
+
+main()
