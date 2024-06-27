@@ -137,7 +137,8 @@ def confirm_user_choice():
        print("You have chosen, \n ***Decryption***!")
        print()
 
-   while True:
+#want to loop until user input is valid
+while True:
         confirm = input("Do you agree with your choice? (enter yes/ no): ").lower()
         print()
 
