@@ -1,7 +1,7 @@
 #function for asking the user for input and making sure entered input is correct
 def user_interface():
  while True: 
-   user_input= input ("Would you like to encrypt or decrypt text? (enter e/ d): ").lower()
+   user_input = input ("Would you like to encrypt or decrypt text? (enter e/ d): ").lower()
    if user_input in ["encrypt", "decrypt", "e", "d"]:
       return user_input
    else:
@@ -10,7 +10,7 @@ def user_interface():
 
 #function for confirming user's choices + letting them exit the code
 def confirm_user_choice():
-   user_choice= user_interface()
+   user_choice = user_interface()
    if user_choice in ["encrypt", "e"]:
       print()
       print ("You have chosen, ***Encryption*** !")
@@ -19,8 +19,8 @@ def confirm_user_choice():
       print("You have chosen,\n ***Decryption*** !")
       print()
   
-   sleep (1) 
-   confirm= input ("Do you agree with choice? (yes/no): ")
+   sleep (2) 
+   confirm = input ("Do you agree with choice? (yes/no): ")
    print()
 
    if confirm in ["yes", "y", "Y", "Yes"]:
@@ -37,12 +37,12 @@ def confirm_user_choice():
         print()
 
         num_choice = int(input("Enter either 1 or 2: "))
-        input_error= "Invalid answer! Enter either 1 or 2"
+        input_error = "Invalid answer! Enter either 1 or 2"
         while num_choice != 1 or num_choice != 2: 
             print (input_error) 
             num_choice = int(input("Enter either 1 or 2: "))
 
-        if num_choice ==1 :
+        if num_choice == 1 :
            print()
            print("Returning to Main Menu!...")
            print()
