@@ -181,7 +181,7 @@ while True:
             print()
 
    
-#function- main
+#function for running the whole program
 def main():
     banner ()
     confirm_user_choice()
