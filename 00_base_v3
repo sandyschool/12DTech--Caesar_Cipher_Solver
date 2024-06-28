@@ -24,7 +24,7 @@ def decrypt_text ():
 
     for char in user_encrypted_text:
 
-        if not char== " ": 
+        if not char == " ": 
           if char in alphabet:
            position = alphabet.find(char)
            shifted_position = (position - shift) % 26
@@ -38,7 +38,7 @@ def decrypt_text ():
 def cipher_shift ():
    while True:
     try:
-        shift= int(input("Enter the shift between 1 and 26: "))
+        shift = int(input("Enter the shift between 1 and 26: "))
         if shift >=1 or shift <= 26:
            return shift
         else:
