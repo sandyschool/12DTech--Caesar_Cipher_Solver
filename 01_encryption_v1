@@ -1,6 +1,6 @@
 #function for encrpytion- plain text to caesar cipher text
 def encrypt_text ():
-    user_plain_text= input("Enter the text you would like to encrypt: ").strip()
+    user_plain_text = input("Enter the text you would like to encrypt: ").strip()
     print ()
     shift = cipher_shift ()
 
