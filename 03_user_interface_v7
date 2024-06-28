@@ -61,14 +61,15 @@ def confirm_user_choice():
             print ("SORRY! Please enter a valid answer")
             print()
 
-def main_menu():
+#function for running whole program
+def main():
     banner()
     while True:
         confirm_user_choice ()
         sleep(2)
         sys.exit()
 
-main_menu()
+main()
 
                     
                        
