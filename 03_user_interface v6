@@ -13,7 +13,7 @@ def user_interface ():
 
 #function for confirming user decisions + letting them exit the code
 def confirm_user_choice():
-   user_choice= user_interface ()
+   user_choice = user_interface ()
    if user_choice in ["encrypt", "e"]:
        print()
        print("You have chosen, \n ***Encryption***!")
