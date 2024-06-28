@@ -46,7 +46,7 @@ while True:
             while True:
                 try:
                     num_choice = int(input("Enter either 1 or 2: "))
-                    error_message= "Invalid answer! Enter either 1 or 2"
+                    error_message = "Invalid answer! Enter either 1 or 2"
 
                     if num_choice == 1:
                         print ()
