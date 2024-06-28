@@ -1,7 +1,7 @@
 #function for asking the user for input and making sure entered input is correct
 def user_interface():
  while True: 
-   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   user_input = input ("Would you like to encrypt or decrypt text?  \n").lower()
    if user_input in ["encrypt", "decrypt", "e", "d"]:
       return user_interface
    else:
@@ -14,9 +14,9 @@ def confirm_user_choice():
    elif user_interface in ["decrypt", "d"] :
       print("You have chosen,\n ***Decryption*** !")
 
-      confirm= input ("Do you agree with choice? (yes/no): ")
+      confirm = input ("Do you agree with choice? (yes/no): ")
       if confirm in ["yes", "y", "Y", "Yes"]:
         if user_interface in ["encrypt", "e"]:
-         print ()    #this where encryption function will go, still creating it
+         print ()    #this is where encryption function will go, still creating it
         elif user_interface in ["decrypt", "d"]:
          decrypt_text()
