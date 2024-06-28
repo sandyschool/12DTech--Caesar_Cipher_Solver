@@ -45,7 +45,7 @@ def decrypt_text ():
 def cipher_shift ():
    while True:
     try:
-        shift= int(input("Enter the shift between 1 and 26: "))
+        shift = int(input("Enter the shift between 1 and 26: "))
         if shift >=1 or shift <= 26:
            return shift
         else:
@@ -57,7 +57,7 @@ def cipher_shift ():
 #function for asking the user for input and making sure entered input is correct
 def user_interface():
  while True: 
-   user_input= input ("Would you like to encrypt or decrypt text?  \n").lower()
+   user_input = input ("Would you like to encrypt or decrypt text?  \n").lower()
    if user_input in ["encrypt", "decrypt", "e", "d"]:
       return user_interface
    else:
@@ -68,12 +68,12 @@ def user_interface():
 if user_input == "decrypt" or "d":
     print ("You have chosen ***Decryption***")
     print()
-    confirm= input ("yes/ no: ").lower()
-    if confirm== "yes":
+    confirm = input ("yes/ no: ").lower()
+    if confirm == "yes":
         print ("***Decryption***")
         print ()
     elif confirm == "no":
-      input=  print("Would you like to exit code?")
+      input =  print("Would you like to exit code?")
       if input == "yes" or "y" or "Y":
        SystemExit
 print ()
