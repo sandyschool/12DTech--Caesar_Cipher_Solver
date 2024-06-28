@@ -24,7 +24,7 @@ def decrypt_text ():
 
     for char in user_encrypted_text:
 
-        if not char== " ": 
+        if not char == " ": 
           if char in alphabet:
            position = alphabet.find(char)
            shifted_position = (position - shift) % 26
