@@ -1,0 +1,76 @@
+#function for asking the user for input and making sure entered input is correct
+def user_interface ():
+    #main menu
+    while True:
+        user_input = input("Would you like to encrypt or decrypt text? (enter e/ d): ").lower()
+        if user_input in ["e","d","encrypt","decrypt"]:
+            return user_input
+        else:
+            print()
+            print("Sorry! Please enter a valid answer. ")
+            print()
+
+
+#function for confirming user decisions + letting them exit the code
+def confirm_user_choice():
+   user_choice= user_interface ()
+   if user_choice in ["encrypt", "e"]:
+       print()
+       print("You have chosen, \n ***Encryption***!")
+       print()
+   elif user_choice in ["decrypt", "d"]:
+       print()
+       print("You have chosen, \n ***Decryption***!")
+       print()
+
+#want to loop until user input is valid
+while True:
+        confirm = input("Do you agree with your choice? (enter yes/ no): ").lower()
+        print()
+
+        if confirm in ["yes", "y"]:
+            if user_choice in ["encrypt", "e"]:
+                   print()
+                   encrypt_text()
+            elif user_choice in ["decrypt", "d"]:
+                print()
+                decrypt_text()
+            break
+
+        elif confirm in ["no", "n"]:
+            print ("Would you like to: \n"
+                    "01. Return to Main menu \n"
+                    "02. Exit Sandy's Caesar Cipher Solver")
+            print()
+
+            while True:
+                try:
+                    num_choice = int(input("Enter either 1 or 2: "))
+                    error_message= "Invalid answer! Enter either 1 or 2"
+
+                    if num_choice == 1:
+                        print ()
+                        print("Returning to Main menu!...")
+                        sleep(2)
+                        return True
+                    elif num_choice == 2:
+                        print("Goodbye! Exiting Sandy's Caesar Cipher Solver now...")
+                        sleep(2)
+                        sys.exit ()
+                    else:
+                        print(error_message)
+                except ValueError:
+                       print(error_message)
+
+        else:
+            print("Sorry, please enter a valid answer! ")
+            print()
+
+   
+#function- main
+def main():
+    banner ()
+    confirm_user_choice()
+
+
+main()
