@@ -62,7 +62,7 @@ def decrypt_text ():
 
 #function for encrpytion- plain text to caesar cipher text
 def encrypt_text ():
-    user_plain_text= input("Enter the text you would like to encrypt: ").strip()
+    user_plain_text = input("Enter the text you would like to encrypt: ").strip()
     print ()
     shift = cipher_shift ()
 
@@ -98,10 +98,10 @@ def encrypt_text ():
 #function for making sure the user enters a number between 1 to 26
 def cipher_shift():
     #error message
-    error ="Sorry, you must enter a number between 1 and 26"
+    error = "Sorry, you must enter a number between 1 and 26"
     while True:
         try:
-            shift= int(input("Enter the shift between 1 and 26: "))
+            shift = int(input("Enter the shift between 1 and 26: "))
             if 1 <=shift and shift <=26:
                 return shift
                 print ()
@@ -160,7 +160,7 @@ while True:
             while True:
                 try:
                     num_choice = int(input("Enter either 1 or 2: "))
-                    error_message= "Invalid answer! Enter either 1 or 2"
+                    error_message = "Invalid answer! Enter either 1 or 2"
 
                     if num_choice == 1:
                         print ()
