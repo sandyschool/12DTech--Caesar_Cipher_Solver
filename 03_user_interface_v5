@@ -12,7 +12,7 @@ def confirm_user_choice():
         sleep (1)
 
     while True:
-     confirm= input ("Do you agree with your choice? (enter yes/ no): ").lower()
+     confirm = input ("Do you agree with your choice? (enter yes/ no): ").lower()
      print()
 
      if confirm in ["yes","y"]:
@@ -28,8 +28,8 @@ def confirm_user_choice():
               "01. Return to Main menu \n"
               "02. Exit Sandy's Caesar Cipher Solver")
         print()
-        num_choice= int(input("Enter either 1 or 2: "))
-        input_error ="Invalid answer!! Enter either 1 or 2"
+        num_choice = int(input("Enter either 1 or 2: "))
+        input_error = "Invalid answer!! Enter either 1 or 2"
         while num_choice != 1 or num_choice != 2:
           print(input_error)
           num_choice = int(input("Enter either 1 or 2:"))
