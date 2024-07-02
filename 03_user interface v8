@@ -1,0 +1,55 @@
+#function for confirming user decisions + letting them exit the code
+def confirm_user_choice():
+   user_choice = user_interface ()
+   if user_choice in ["encrypt", "e"]:
+       sleep(2)
+       print()
+       print("You have chosen \n ***encryption***!")
+       print()
+   elif user_choice in ["decrypt", "d"]:
+       sleep(2)
+       print()
+       print("You have chosen \n ***decryption***!")
+       print()
+
+   while True:
+        confirm = input ("Do you confirm this choice? (yes/ no): " ).lower() 
+        if confirm in ["yes", "y"]:
+            if user_choice in ["decrypt", "d"]:
+                print()
+                decrypt_text()      
+            elif user_choice in ["encrypt", "e"]:
+                sleep(2)
+                print()
+                encrypt_text()
+            break
+        elif confirm in ["no", "n"]:
+            print()
+            print("Would you like to \n"
+                     "01. Return to the main menu \n "
+                     "02. Exit Sandy's Caesar cipher solver")
+            print()
+            while True: 
+                try:
+                 num_choice = int(input("Enter either 1 or 2: "))
+                 input_error = "INVALID! Please enter either 1 or 2"
+                except ValueError:
+                 print()
+                 print(input_error)
+                else:
+                 if num_choice == 1:
+                    print()
+                    print ("Returning to main menu...")
+                    sleep(2)
+                    print()
+                    return confirm_user_choice ()
+                 elif num_choice == 2:
+                    print("GOODBYE! Exiting Sandy's Caesar cipher solver now...")
+                    sleep(2)
+                    sys.exit()
+                 else:
+                   sleep(2)
+                   print(input_error)
+        else:
+            print ("SORRY! Please enter a valid answer")
+            print()
