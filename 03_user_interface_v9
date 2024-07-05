@@ -1,0 +1,72 @@
+#function for asking the user for input and making sure entered input is correct
+def user_interface ():
+    #main menu
+    while True:
+        user_input = input("Would you like to encrypt or decrypt text? (enter e/ d): ").lower()
+        if user_input [0].lower() in ("e", "d"):
+            return user_input
+        else:
+            print()
+            print("SORRY! Please enter a valid answer.")
+            print()
+
+
+#function for confirming user decisions + letting them exit the code
+def confirm_user_choice():
+   user_choice = user_interface ()
+   if user_choice [0].lower() in ("e"):
+       sleep(2)
+       print()
+       print("You have chosen \n ***encryption***!")
+       print()
+   elif user_choice [0].lower() in ("d"):
+       sleep(2)
+       print()
+       print("You have chosen \n ***decryption***!")
+       print()
+
+   while True:
+        confirm = input ("Do you confirm this choice? (enter y/ n): " ).lower() 
+        if confirm [0].lower() in ("y"): 
+             if user_choice [0].lower() in ("d") :
+                print()
+                decrypt_text()      
+             elif user_choice [0].lower() in ("e") :
+                sleep(2)
+                print()
+                encrypt_text()
+             break
+        elif confirm [0].lower () in ("n"): 
+              print()
+              sleep(2)
+              print("Would you like to \n"
+                     "01. Return to the main menu \n "
+                     "02. Exit Sandy's Caesar cipher solver")
+              print()
+              sleep(2)
+              while True: 
+                try:
+                 num_choice = int(input("Enter either 1 or 2: "))
+                 input_error = "INVALID! Please enter either 1 or 2"
+                except ValueError:
+                 print()
+                 print(input_error)
+                else:
+                 if num_choice == 1:
+                    print()
+                    sleep(2)
+                    print ("Returning to main menu...")
+                    sleep(2)
+                    print()
+                    return confirm_user_choice ()
+                 elif num_choice == 2:
+                    print()
+                    print("GOODBYE! Exiting Sandy's Caesar cipher solver now...")
+                    sleep(2)
+                    sys.exit()
+                 else:
+                   sleep(2)
+                   print(input_error)
+        else:
+            print ("SORRY! Please enter a valid answer")
+            print()
