@@ -1,20 +1,14 @@
 #imports go here
-#importing alphabet
-
-#importing time-which gives the illusion of a delay in program
+#imports go here
+import string
+import sys
 from time import sleep
 
-#for system exit
-import sys
-
-import string
-#import alphabet- lowercase and uppercase
 alphabet_lower = string.ascii_lowercase #abcdefghijklmnopqrstuvwxyz
 alphabet_upper = string.ascii_uppercase #ABCEDFGHIJKLMNOPQRSTUVWXYZ
 
 alphabet_lower_list = list(alphabet_lower)  # ['a', 'b', 'c', 'd', ..., 'z']
 alphabet_upper_list = list(alphabet_upper)  # ['A', 'B', 'C', 'D', ..., 'Z']
-
 
 def banner():
    #a banner displayed at the beginning of the program
