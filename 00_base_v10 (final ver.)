@@ -22,7 +22,7 @@ def banner():
     # display instructions if user wants
     while True:
         instructions = input("Would you like to display instructions? Enter yes or no \n "
-                             "(shortcut key ---> 'y' or 'n'): ").strip()
+                             "(shortcut key ---> 'y'/'Y' or 'n'/'N'): ").strip()
         print()
 
         if instructions:
@@ -46,7 +46,7 @@ def banner():
 def end_banner():
     while True:
         end = input("Would you like to go again? Enter yes or no \n"
-                    "(shortcut key --> type 'y' or 'n'): ")
+                    "(shortcut key --> type 'y'/'Y' or 'n'/'N'): ")
         print()
         if end:
             if end[0].lower() in "y":
@@ -73,8 +73,8 @@ def end_banner():
 # function for decrypting text-transform encrypted text to plain text
 def decrypt_text():
     while True:
-        user_encrypted_text = input("Enter the text you would like to decrypt. It doesn't matter if \n"
-                                    "you use upper or lower case. *REQUIRED*: ").strip()
+        user_encrypted_text = input("Enter the text you would like to decrypt. It doesn't matter if you use \n"
+                                    "upper or lower case. *REQUIRED*: ").strip()
         print()
         if not user_encrypted_text:
             print("SORRY! You cannot leave this field blank.")
@@ -171,7 +171,7 @@ def user_interface():
     while True:
         user_input = input(
             "Would you like to encrypt or decrypt text? It doesn't matter if you use upper or lower case. \n"
-            "(shortcut key --> enter 'e' or 'd') **REQUIRED**: ").lower()
+            "(shortcut key --> enter 'e'/'E' or 'd'/'D') **REQUIRED**: ").lower()
         if user_input:
             if user_input[0].lower() in ("e", "d"):
                 return user_input
@@ -209,7 +209,7 @@ def confirm_user_choice():
         print()
 
     while True:
-        confirm = input("Do you confirm this choice? (shortcut key --> enter 'y' / 'n') *REQUIRED*: ").lower()
+        confirm = input("Do you confirm this choice? (shortcut key --> enter 'y'/'Y' or 'n'/'N') *REQUIRED*: ").lower()
         print()
         if confirm:
             if confirm[0].lower() in "y":
