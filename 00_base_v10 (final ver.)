@@ -176,12 +176,12 @@ def user_interface():
             if user_input[0].lower() in ("e", "d"):
                 return user_input
             else:
+                print()
                 print("SORRY! Please enter a valid answer.")
-                sleep(1)
                 print()
         else:
+            print()
             print("SORRY! Please enter a valid answer.")
-            sleep(1)
             print()
 
 
